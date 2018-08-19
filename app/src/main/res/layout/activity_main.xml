@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:weightSum="26"
+    android:background="#fff">
+
+    <com.synnapps.carouselview.CarouselView
+        android:layout_weight="19"
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:fillColor="#fc5252"
+        app:pageColor="#bfbfbf"
+        app:radius="5dp"
+        app:autoPlay="false"
+        app:slideInterval="3000"
+        app:strokeColor="#FFBFBFBF"
+        app:strokeWidth="1dp"
+        app:indicatorMarginVertical="5dp"/>
+
+    <TextView
+        android:layout_weight="3"
+        android:textColor="#7e7e7e"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_width="270dp"
+        android:layout_height="0dp"
+        android:text="By tapping Log In, you agree with our Terms of Service and Privacy Policy"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:layout_weight="3"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:id="@+id/login_button"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="15sp"
+        facebook:com_facebook_login_text="LOG IN WITH FACEBOOK"
+        android:background="@drawable/round_blue_button"/>
+
+
+
+
+    <TextView
+        android:id="@+id/bottom_text"
+        android:layout_weight="1"
+        android:textColor="#7e7e7e"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_width="270dp"
+        android:layout_height="0dp"
+        android:textSize="13sp"
+        android:text="We don't post anything to Facebook."/>
+
+
+
+</LinearLayout>
