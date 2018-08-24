@@ -6,17 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
-    android:weightSum="20"
+    android:weightSum="19.5"
     android:orientation="vertical">
 
 
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="2"-->
+        <!--android:background="#F00"-->
+        <!--android:weightSum="3"-->
+        <!--&gt;-->
+        <!--<ImageButton-->
+            <!--android:src="@drawable/ic_perm_identity_black_24dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent" />-->
+        <!--<ImageButton-->
+
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent" />-->
+        <!--<ImageButton-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent" />-->
+    <!--</LinearLayout>-->
+
+    <android.support.design.widget.BottomNavigationView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/top_navigation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:background="#F00"
-        ></LinearLayout>
+        android:layout_weight="1.5"
+        app:menu="@menu/top_navigation_main"
+        app:itemIconTint="@color/drawer_item"
+        app:itemTextColor="@color/drawer_item"
+        app:itemBackground="@android:color/transparent"
+        android:background="#fff"
+        />
 
     <FrameLayout
         android:id="@+id/fragment_container"

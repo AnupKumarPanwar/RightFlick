@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ProfileCardsFragment">
+    tools:context=".ProfileCardsFragment"
+    android:weightSum="20"
+    android:orientation="vertical"
+    android:background="#fff">
 
     <com.yuyakaido.android.cardstackview.CardStackView
         app:stackFrom="bottom"
         android:id="@+id/profile_cards"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:swipeDirection="horizontal"/>
+        android:layout_height="0dp"
+        app:swipeDirection="horizontal"
+        android:layout_weight="17"/>
 
-</FrameLayout>
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:src="@drawable/respopts"
+        android:background="#fff"/>
+
+    <!--<LinearLayout-->
+        <!--android:layout_weight="3"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:orientation="horizontal">-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

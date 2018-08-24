@@ -71,35 +71,6 @@ public class ProfileCardsFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        cardStackView = (CardStackView) getView().findViewById(R.id.profile_cards);
-        cardStackView.setCardEventListener(new CardStackView.CardEventListener() {
-            @Override
-            public void onCardDragging(float percentX, float percentY) {
-
-            }
-
-            @Override
-            public void onCardSwiped(SwipeDirection direction) {
-
-            }
-
-            @Override
-            public void onCardReversed() {
-
-            }
-
-            @Override
-            public void onCardMovedToOrigin() {
-
-            }
-
-            @Override
-            public void onCardClicked(int index) {
-
-            }
-        });
-
-        reload();
     }
 
     private List<ProfileData> createProfileDatas() {
@@ -138,8 +109,40 @@ public class ProfileCardsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_profile_cards, container, false);
+        cardStackView = (CardStackView) rootView.findViewById(R.id.profile_cards);
+        cardStackView.setCardEventListener(new CardStackView.CardEventListener() {
+            @Override
+            public void onCardDragging(float percentX, float percentY) {
+
+            }
+
+            @Override
+            public void onCardSwiped(SwipeDirection direction) {
+
+            }
+
+            @Override
+            public void onCardReversed() {
+
+            }
+
+            @Override
+            public void onCardMovedToOrigin() {
+
+            }
+
+            @Override
+            public void onCardClicked(int index) {
+
+            }
+        });
+
+        reload();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_cards, container, false);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -1,12 +1,18 @@
 package com.rightflick.dating.social;
 
-import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
+import android.support.design.internal.BottomNavigationMenuView;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -16,7 +22,7 @@ import com.yuyakaido.android.cardstackview.SwipeDirection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ProfileCardsFragment.OnFragmentInteractionListener{
 
     FragmentTransaction fragmentTransaction;
 
@@ -38,9 +44,26 @@ public class HomeActivity extends AppCompatActivity {
             window.setStatusBarColor(ContextCompat.getColor(HomeActivity.this,R.color.colorPrimaryDark));
         }
 
-        fragmentTransaction = getFragmentManager().beginTransaction();
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.top_navigation);
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
+        for (int i = 0; i < menuView.getChildCount(); i++) {
+            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, displayMetrics);
+            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, displayMetrics);
+            iconView.setLayoutParams(layoutParams);
+        }
+
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         ProfileCardsFragment profileCardsFragment = new ProfileCardsFragment();
-        fragmentTransaction.add(R.id.fragment_container, profileCardsFragment, "Profile");
+        fragmentTransaction.add(R.id.fragment_container, profileCardsFragment);
+        fragmentTransaction.commit();
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }

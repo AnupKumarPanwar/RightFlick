@@ -30,4 +30,5 @@ dependencies {
     implementation 'com.synnapps:carouselview:0.1.5'
     implementation "com.yuyakaido.android:card-stack-view:1.0.0-beta9"
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.android.support:design:27.1.1'
 }

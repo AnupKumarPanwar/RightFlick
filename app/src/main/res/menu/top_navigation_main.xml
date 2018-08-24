@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rightflick.dating.social.HomeActivity">
+    <item
+        android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:icon="@drawable/ic_perm_identity_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title=""
+        />
+    <item
+        android:id="@+id/action_schedules"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_border_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="" />
+    <item
+        android:id="@+id/action_music"
+        android:enabled="true"
+        android:icon="@drawable/ic_message_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="" />
+</menu>
