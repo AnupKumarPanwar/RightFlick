@@ -3,6 +3,7 @@ package com.rightflick.dating.social;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -22,7 +24,7 @@ import com.yuyakaido.android.cardstackview.SwipeDirection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements ProfileCardsFragment.OnFragmentInteractionListener{
+public class HomeActivity extends AppCompatActivity implements ProfileCardsFragment.OnFragmentInteractionListener, MyProfileFragment.OnFragmentInteractionListener{
 
     FragmentTransaction fragmentTransaction;
 
@@ -54,6 +56,17 @@ public class HomeActivity extends AppCompatActivity implements ProfileCardsFragm
             layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, displayMetrics);
             iconView.setLayoutParams(layoutParams);
         }
+
+        bottomNavigationView.setSelectedItemId(R.id.action_schedules);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                return false;
+            }
+        });
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         ProfileCardsFragment profileCardsFragment = new ProfileCardsFragment();
