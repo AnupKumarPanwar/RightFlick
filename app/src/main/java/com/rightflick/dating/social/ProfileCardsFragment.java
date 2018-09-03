@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 
+import com.labo.kaji.fragmentanimations.MoveAnimation;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.SwipeDirection;
 
@@ -61,6 +63,16 @@ public class ProfileCardsFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+        if (enter) {
+            return MoveAnimation.create(MoveAnimation.LEFT, enter, 100);
+        }
+        else {
+            return MoveAnimation.create(MoveAnimation.RIGHT, enter, 100);
+        }
     }
 
     @Override

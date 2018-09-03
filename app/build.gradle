@@ -31,4 +31,7 @@ dependencies {
     implementation "com.yuyakaido.android:card-stack-view:1.0.0-beta9"
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:design:27.1.1'
+    implementation 'com.labo.kaji:fragmentanimations:0.1.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
 }

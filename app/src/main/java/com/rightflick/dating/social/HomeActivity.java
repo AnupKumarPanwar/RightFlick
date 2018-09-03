@@ -33,6 +33,7 @@ public class HomeActivity extends AppCompatActivity implements ProfileCardsFragm
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         Window window = HomeActivity.this.getWindow();
 
 // clear FLAG_TRANSLUCENT_STATUS flag:
@@ -46,7 +47,7 @@ public class HomeActivity extends AppCompatActivity implements ProfileCardsFragm
             window.setStatusBarColor(ContextCompat.getColor(HomeActivity.this,R.color.colorPrimaryDark));
         }
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.top_navigation);
+        final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.top_navigation);
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
         for (int i = 0; i < menuView.getChildCount(); i++) {
             final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
@@ -64,7 +65,27 @@ public class HomeActivity extends AppCompatActivity implements ProfileCardsFragm
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                return false;
+                switch (id){
+                    case R.id.action_favorites :
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        MyProfileFragment myProfileFragment = new MyProfileFragment();
+                        fragmentTransaction.replace(R.id.fragment_container, myProfileFragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        fragmentTransaction.commit();
+                        break;
+
+                    case R.id.action_schedules :
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        ProfileCardsFragment profileCardsFragment = new ProfileCardsFragment();
+                        fragmentTransaction.replace(R.id.fragment_container, profileCardsFragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        fragmentTransaction.commit();
+                        break;
+                }
+
+                return true;
             }
         });
 

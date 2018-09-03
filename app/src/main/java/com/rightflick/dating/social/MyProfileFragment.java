@@ -7,6 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.widget.GridView;
+
+import com.labo.kaji.fragmentanimations.MoveAnimation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,6 +33,13 @@ public class MyProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    GridView gridView;
+
+    List<UploadedPic> pics;
+
+    UserImagesAdapter userImagesAdapter;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -51,6 +65,17 @@ public class MyProfileFragment extends Fragment {
         return fragment;
     }
 
+
+    @Override
+    public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+        if (enter) {
+            return MoveAnimation.create(MoveAnimation.RIGHT, enter, 100);
+        }
+        else {
+            return MoveAnimation.create(MoveAnimation.LEFT, enter, 100);
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +89,42 @@ public class MyProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_my_profile, container, false);
+
+        pics = new ArrayList<>();
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/96bb29858c765c593b9596581999786f/5C154F9B/t51.2885-15/e35/c83.0.419.419/39370232_2241023096184777_3804415295594954752_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/b710693e4dc4cb443b6fb743d2501f7c/5C35DA0C/t51.2885-15/sh0.08/e35/s640x640/31941457_1031025983720679_1139431025215012864_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/4e223503b2af0ccd40f7b154d59fc7a8/5C3BBC76/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/30830197_221762301915876_5171126910553423872_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/894ed9f2dd780ad9d3663054bcd106b5/5C2039D9/t51.2885-15/sh0.08/e35/s640x640/27880047_604100519921565_8860978355869057024_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/214f2d2cf81b7844f7919dddd705dde2/5C3ABC04/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/25023543_1733848449979150_1973813321081552896_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/44e20d6a2b6c87f920810a32e61a5a7d/5C22E0B1/t51.2885-15/sh0.08/e35/s640x640/22345018_1343678789071111_1940766648705220608_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/b710693e4dc4cb443b6fb743d2501f7c/5C35DA0C/t51.2885-15/sh0.08/e35/s640x640/31941457_1031025983720679_1139431025215012864_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/4e223503b2af0ccd40f7b154d59fc7a8/5C3BBC76/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/30830197_221762301915876_5171126910553423872_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/894ed9f2dd780ad9d3663054bcd106b5/5C2039D9/t51.2885-15/sh0.08/e35/s640x640/27880047_604100519921565_8860978355869057024_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/214f2d2cf81b7844f7919dddd705dde2/5C3ABC04/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/25023543_1733848449979150_1973813321081552896_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/44e20d6a2b6c87f920810a32e61a5a7d/5C22E0B1/t51.2885-15/sh0.08/e35/s640x640/22345018_1343678789071111_1940766648705220608_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/b710693e4dc4cb443b6fb743d2501f7c/5C35DA0C/t51.2885-15/sh0.08/e35/s640x640/31941457_1031025983720679_1139431025215012864_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/4e223503b2af0ccd40f7b154d59fc7a8/5C3BBC76/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/30830197_221762301915876_5171126910553423872_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/894ed9f2dd780ad9d3663054bcd106b5/5C2039D9/t51.2885-15/sh0.08/e35/s640x640/27880047_604100519921565_8860978355869057024_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/214f2d2cf81b7844f7919dddd705dde2/5C3ABC04/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/25023543_1733848449979150_1973813321081552896_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/44e20d6a2b6c87f920810a32e61a5a7d/5C22E0B1/t51.2885-15/sh0.08/e35/s640x640/22345018_1343678789071111_1940766648705220608_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/b710693e4dc4cb443b6fb743d2501f7c/5C35DA0C/t51.2885-15/sh0.08/e35/s640x640/31941457_1031025983720679_1139431025215012864_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/4e223503b2af0ccd40f7b154d59fc7a8/5C3BBC76/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/30830197_221762301915876_5171126910553423872_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/894ed9f2dd780ad9d3663054bcd106b5/5C2039D9/t51.2885-15/sh0.08/e35/s640x640/27880047_604100519921565_8860978355869057024_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/214f2d2cf81b7844f7919dddd705dde2/5C3ABC04/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/25023543_1733848449979150_1973813321081552896_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/44e20d6a2b6c87f920810a32e61a5a7d/5C22E0B1/t51.2885-15/sh0.08/e35/s640x640/22345018_1343678789071111_1940766648705220608_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/b710693e4dc4cb443b6fb743d2501f7c/5C35DA0C/t51.2885-15/sh0.08/e35/s640x640/31941457_1031025983720679_1139431025215012864_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/4e223503b2af0ccd40f7b154d59fc7a8/5C3BBC76/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/30830197_221762301915876_5171126910553423872_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/894ed9f2dd780ad9d3663054bcd106b5/5C2039D9/t51.2885-15/sh0.08/e35/s640x640/27880047_604100519921565_8860978355869057024_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/214f2d2cf81b7844f7919dddd705dde2/5C3ABC04/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/25023543_1733848449979150_1973813321081552896_n.jpg"));
+        pics.add(new UploadedPic("https://instagram.fixc1-2.fna.fbcdn.net/vp/44e20d6a2b6c87f920810a32e61a5a7d/5C22E0B1/t51.2885-15/sh0.08/e35/s640x640/22345018_1343678789071111_1940766648705220608_n.jpg"));
+
+        gridView = (GridView) rootView.findViewById(R.id.my_pics);
+        userImagesAdapter = new UserImagesAdapter(getActivity(), pics);
+        gridView.setAdapter(userImagesAdapter);
+
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
