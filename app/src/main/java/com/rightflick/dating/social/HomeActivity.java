@@ -24,7 +24,7 @@ import com.yuyakaido.android.cardstackview.SwipeDirection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements ProfileCardsFragment.OnFragmentInteractionListener, MyProfileFragment.OnFragmentInteractionListener{
+public class HomeActivity extends AppCompatActivity implements ProfileCardsFragment.OnFragmentInteractionListener, MyProfileFragment.OnFragmentInteractionListener, FeedFragmant.OnFragmentInteractionListener{
 
     FragmentTransaction fragmentTransaction;
 
@@ -79,6 +79,15 @@ public class HomeActivity extends AppCompatActivity implements ProfileCardsFragm
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         ProfileCardsFragment profileCardsFragment = new ProfileCardsFragment();
                         fragmentTransaction.replace(R.id.fragment_container, profileCardsFragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        fragmentTransaction.commit();
+                        break;
+
+                    case R.id.action_music :
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        FeedFragmant feedFragmant = new FeedFragmant();
+                        fragmentTransaction.replace(R.id.fragment_container, feedFragmant);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                         fragmentTransaction.commit();

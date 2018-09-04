@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView
-    android:nestedScrollingEnabled="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyProfileFragment"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="true">
+
+<RelativeLayout
+    android:gravity="center"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MyProfileFragment"
-    android:layout_gravity="center"
-    android:nestedScrollingEnabled="true"
     >
 
 
         <LinearLayout
-            android:nestedScrollingEnabled="true"
+            android:id="@+id/topInfo"
             android:paddingTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,8 +30,8 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/john"
                 app:civ_border_width="0dp"
                 app:civ_border_color="#FF000000"/>
@@ -73,6 +72,17 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topInfo"
+        android:gravity="center"
+        >
+
 
             <GridView
                 android:gravity="center"
@@ -84,13 +94,10 @@
                 android:verticalSpacing="2dp"
                 android:horizontalSpacing="2dp"
                 android:stretchMode="columnWidth"
-                android:nestedScrollingEnabled="true"
-                >
+                />
 
-            </GridView>
+    </RelativeLayout>
 
-        </LinearLayout>
 
 </RelativeLayout>
-
 </ScrollView>

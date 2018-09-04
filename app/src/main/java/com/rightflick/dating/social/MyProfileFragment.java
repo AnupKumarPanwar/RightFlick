@@ -1,6 +1,7 @@
 package com.rightflick.dating.social;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.labo.kaji.fragmentanimations.MoveAnimation;
@@ -122,6 +124,15 @@ public class MyProfileFragment extends Fragment {
         gridView = (GridView) rootView.findViewById(R.id.my_pics);
         userImagesAdapter = new UserImagesAdapter(getActivity(), pics);
         gridView.setAdapter(userImagesAdapter);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), FullScreenImage.class);
+                intent.putExtra("url", pics.get(position).image);
+                startActivity(intent);
+            }
+        });
 
 
         return rootView;
