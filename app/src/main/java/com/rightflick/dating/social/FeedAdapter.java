@@ -49,6 +49,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         holder.userName.setText(feedItem.userame);
 
         Picasso.get().load(feedItem.user_dp).into(holder.userDP);
+
         Picasso.get().load(feedItem.image).into(holder.image);
     }
 

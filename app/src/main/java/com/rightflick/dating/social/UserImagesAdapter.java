@@ -45,13 +45,14 @@ public class UserImagesAdapter extends BaseAdapter {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             grid = new View(context);
             grid = layoutInflater.inflate(R.layout.single_uploaded_image, parent, false);
-            ImageView imageView = (ImageView) grid.findViewById(R.id.uploaded_image);
-//            imageView.setImageURI(Uri.parse(pics.get(position).image));
-            Picasso.get().load(pics.get(position).image).into(imageView);
-        }
+                    }
         else {
             grid = (View) convertView;
         }
+
+        ImageView imageView = (ImageView) grid.findViewById(R.id.uploaded_image);
+//            imageView.setImageURI(Uri.parse(pics.get(position).image));
+        Picasso.get().load(pics.get(position).image).into(imageView);
 
         return grid;
     }
