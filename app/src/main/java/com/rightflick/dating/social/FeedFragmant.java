@@ -93,7 +93,7 @@ public class FeedFragmant extends Fragment {
 
         feedItems = new ArrayList<>();
 
-        feedAdapter = new FeedAdapter(feedItems);
+        feedAdapter = new FeedAdapter(getApplicationContext(), feedItems);
 
 
         feedItems.add(new FeedItem("Anup", "https://pbs.twimg.com/profile_images/565802631231062016/7FuVrnc9_400x400.jpeg", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));

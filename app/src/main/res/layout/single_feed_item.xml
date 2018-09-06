@@ -47,7 +47,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:gravity="center|left"
+        android:paddingTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:stateListAnimator="@animator/scale"
+            android:button="@null"
+            android:layout_marginLeft="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/like_icon"/>
 
+        <CheckBox
+            android:button="@null"
+            android:layout_marginLeft="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#ff0000"/>
+    </LinearLayout>
 
     <TextView
         android:textColor="#000"

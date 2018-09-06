@@ -34,5 +34,4 @@ dependencies {
     implementation 'com.labo.kaji:fragmentanimations:0.1.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.jsibbold:zoomage:1.1.0'
-    implementation 'com.facebook.shimmer:shimmer:0.3.0'
 }
