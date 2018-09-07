@@ -1,11 +1,16 @@
 package com.rightflick.dating.social;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,9 +24,12 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     List<FeedItem> feedItems;
     Context context;
 
+
     class FeedViewHolder extends RecyclerView.ViewHolder{
         TextView userName, caption;
         ImageView userDP, image;
+        ImageView whiteLike;
+        CheckBox likButton, commentButton;
         public FeedViewHolder(View itemView) {
             super(itemView);
             userName = (TextView) itemView.findViewById(R.id.user_name);
@@ -29,6 +37,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
             userDP = (ImageView) itemView.findViewById(R.id.profile_image);
             image = (ImageView) itemView.findViewById(R.id.imageView);
+            whiteLike = (ImageView) itemView.findViewById(R.id.white_like);
+            likButton = (CheckBox) itemView.findViewById(R.id.likeButton);
+            commentButton = (CheckBox) itemView.findViewById(R.id.commentButton);
 
         }
     }
@@ -46,7 +57,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FeedViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final FeedViewHolder holder, int position) {
         FeedItem feedItem = feedItems.get(position);
 
         final long[] prevTime = {0};
@@ -68,6 +79,15 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
                     long diff = System.currentTimeMillis() - prevTime[0];
 
                     if (diff<=300) {
+                        AnimationSet animationSet = new AnimationSet(true);
+                        @SuppressLint("ResourceType") Animation alphaAnimation = AnimationUtils.loadAnimation(context, R.animator.fade_in_animation);
+                        @SuppressLint("ResourceType") Animation scaleAnimation = AnimationUtils.loadAnimation(context, R.animator.scale2);
+//                        animationSet.addAnimation(alphaAnimation);
+                        animationSet.addAnimation(scaleAnimation);
+                        holder.whiteLike.startAnimation(animationSet);
+                        animationSet.setFillBefore(true);
+                        animationSet.setFillAfter(true);
+                        holder.likButton.setChecked(true);
                         Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
                     }
 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -37,6 +38,10 @@
 
     </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
         <ImageView
             android:background="#fff"
@@ -47,6 +52,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+            <ImageView
+                android:scaleX="0.001"
+                android:scaleY="0.001"
+                android:visibility="invisible"
+                android:id="@+id/white_like"
+                android:src="@drawable/ic_heart_white_24dp"
+                android:layout_centerInParent="true"
+                android:layout_width="150dp"
+                android:layout_height="150dp" />
+        </RelativeLayout>
+
     <LinearLayout
         android:gravity="center|left"
         android:paddingTop="15dp"
@@ -54,6 +70,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <CheckBox
+            android:id="@+id/likeButton"
             android:stateListAnimator="@animator/scale"
             android:button="@null"
             android:layout_marginLeft="20dp"
@@ -62,19 +79,23 @@
             android:background="@drawable/like_icon"/>
 
         <CheckBox
+            android:id="@+id/commentButton"
             android:button="@null"
             android:layout_marginLeft="10dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="#ff0000"/>
+            android:background="@drawable/ic_chat_bubble_outline_black_24dp"/>
     </LinearLayout>
 
     <TextView
         android:textColor="#000"
-        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:text="caption"
         android:id="@+id/caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
+    
