@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<RelativeLayout android:layout_width="match_parent"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:alpha="0.7"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#000"-->
+    <!--android:alpha="0.7"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android" />-->
+
+<android.support.v7.widget.CardView
+    app:cardBackgroundColor="#d2d2d2"
+    android:gravity="center"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<android.support.v7.widget.CardView
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/unfollow"
+            android:padding="13dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Unfollow"
+            android:background="#fff"
+            android:textColor="#2887fe"/>
+
+        <TextView
+            android:id="@+id/msg"
+            android:layout_marginTop="0.5dp"
+            android:padding="13dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Send Message"
+            android:background="#fff"
+            android:textColor="#2887fe"/>
+
+        <TextView
+            android:id="@+id/link"
+            android:layout_marginTop="0.5dp"
+            android:padding="13dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Copy Link"
+            android:background="#fff"
+            android:textColor="#2887fe"/>
+
+        <TextView
+            android:id="@+id/report"
+            android:layout_marginTop="0.5dp"
+            android:padding="13dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Report"
+            android:background="#fff"
+            android:textColor="#2887fe"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true">
+    <TextView
+        android:id="@+id/cencel"
+        android:textStyle="bold"
+        android:padding="13dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:background="#fff"
+        android:textColor="#f06463"/>
+</android.support.v7.widget.CardView>
+</LinearLayout>
+</android.support.v7.widget.CardView>
+<!--</RelativeLayout>-->

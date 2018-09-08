@@ -1,8 +1,10 @@
 package com.rightflick.dating.social;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,8 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
     List<FeedItem> feedItems;
     Context context;
+    FragmentManager fragmentManager;
+    Activity activity;
 
 
     class FeedViewHolder extends RecyclerView.ViewHolder{
@@ -31,6 +35,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         ImageView whiteLike;
         CheckBox likButton;
         ImageView commentButton;
+        ImageView options;
         public FeedViewHolder(View itemView) {
             super(itemView);
             userName = (TextView) itemView.findViewById(R.id.user_name);
@@ -41,13 +46,16 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
             whiteLike = (ImageView) itemView.findViewById(R.id.white_like);
             likButton = (CheckBox) itemView.findViewById(R.id.likeButton);
             commentButton = (ImageView) itemView.findViewById(R.id.commentButton);
+            options = (ImageView) itemView.findViewById(R.id.options);
 
         }
     }
 
-    public FeedAdapter(Context context, List<FeedItem> feedItems) {
+    public FeedAdapter(Context context, List<FeedItem> feedItems, FragmentManager fragmentManager, Activity activity) {
         this.feedItems = feedItems;
         this.context = context;
+        this.fragmentManager = fragmentManager;
+        this.activity = activity;
     }
 
     @NonNull
@@ -94,6 +102,15 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
                     prevTime[0] = System.currentTimeMillis();
                 }
+            }
+        });
+
+
+        holder.options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomOptions bottomOptions  = new BottomOptions(activity);
+                bottomOptions.show();
             }
         });
     }

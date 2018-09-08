@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.Toast;
 
 import com.labo.kaji.fragmentanimations.MoveAnimation;
 
@@ -93,7 +95,7 @@ public class FeedFragmant extends Fragment {
 
         feedItems = new ArrayList<>();
 
-        feedAdapter = new FeedAdapter(getApplicationContext(), feedItems);
+        feedAdapter = new FeedAdapter(getApplicationContext(), feedItems, this.getFragmentManager(), getActivity());
 
 
         feedItems.add(new FeedItem("Anup", "https://pbs.twimg.com/profile_images/565802631231062016/7FuVrnc9_400x400.jpeg", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
@@ -118,6 +120,7 @@ public class FeedFragmant extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setAdapter(feedAdapter);
+
 
         return view;
     }

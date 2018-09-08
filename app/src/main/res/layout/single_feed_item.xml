@@ -37,6 +37,8 @@
             android:text="John Abraham"/>
 
         <ImageView
+            android:onClick="openOptions"
+            android:id="@+id/options"
             android:src="@drawable/ic_more_vert_black_24dp"
             android:layout_weight="1"
             android:layout_width="0dp"
