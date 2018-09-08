@@ -29,7 +29,8 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         TextView userName, caption;
         ImageView userDP, image;
         ImageView whiteLike;
-        CheckBox likButton, commentButton;
+        CheckBox likButton;
+        ImageView commentButton;
         public FeedViewHolder(View itemView) {
             super(itemView);
             userName = (TextView) itemView.findViewById(R.id.user_name);
@@ -39,7 +40,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
             image = (ImageView) itemView.findViewById(R.id.imageView);
             whiteLike = (ImageView) itemView.findViewById(R.id.white_like);
             likButton = (CheckBox) itemView.findViewById(R.id.likeButton);
-            commentButton = (CheckBox) itemView.findViewById(R.id.commentButton);
+            commentButton = (ImageView) itemView.findViewById(R.id.commentButton);
 
         }
     }
@@ -88,7 +89,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
                         animationSet.setFillBefore(true);
                         animationSet.setFillAfter(true);
                         holder.likButton.setChecked(true);
-                        Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
                     }
 
                     prevTime[0] = System.currentTimeMillis();

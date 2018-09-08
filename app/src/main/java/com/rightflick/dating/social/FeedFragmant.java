@@ -96,17 +96,17 @@ public class FeedFragmant extends Fragment {
         feedAdapter = new FeedAdapter(getApplicationContext(), feedItems);
 
 
-        feedItems.add(new FeedItem("Anup", "https://pbs.twimg.com/profile_images/565802631231062016/7FuVrnc9_400x400.jpeg", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));
+        feedItems.add(new FeedItem("Anup", "https://pbs.twimg.com/profile_images/565802631231062016/7FuVrnc9_400x400.jpeg", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
 
-        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/34396679_1566654770129480_5831421825292173312_o.jpg?_nc_cat=0&oh=fe97fbd0fb81bd46837fae60a79e571b&oe=5C34D11E", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));
+        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/34396679_1566654770129480_5831421825292173312_o.jpg?_nc_cat=0&oh=fe97fbd0fb81bd46837fae60a79e571b&oe=5C34D11E", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
 
-        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/31739802_1529853770476247_1026674909490708480_o.jpg?_nc_cat=0&oh=a00569020f89a82c553973020084db48&oe=5C33A6DB", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));
+        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/31739802_1529853770476247_1026674909490708480_o.jpg?_nc_cat=0&oh=a00569020f89a82c553973020084db48&oe=5C33A6DB", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
 
-        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/31486621_1529853743809583_8490965707842912256_o.jpg?_nc_cat=0&oh=c5a6bac3f7c9a3ab46f51550f058aff7&oe=5C340E42", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));
+        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/31486621_1529853743809583_8490965707842912256_o.jpg?_nc_cat=0&oh=c5a6bac3f7c9a3ab46f51550f058aff7&oe=5C340E42", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
 
-        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/31143891_1521453244649633_8114888570289782784_n.jpg?_nc_cat=0&oh=0d16196d23c28e68fdcbcdc1aef75fdb&oe=5C233AF4", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));
+        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/31143891_1521453244649633_8114888570289782784_n.jpg?_nc_cat=0&oh=0d16196d23c28e68fdcbcdc1aef75fdb&oe=5C233AF4", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
 
-        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/29573090_1497794830348808_3946811174397111108_n.jpg?_nc_cat=0&oh=8f7bbde86831bce9a6f1ae02ce8e6051&oe=5BFA2325", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Hello World"));
+        feedItems.add(new FeedItem("Anup", "https://scontent.xx.fbcdn.net/v/t1.0-9/29573090_1497794830348808_3946811174397111108_n.jpg?_nc_cat=0&oh=8f7bbde86831bce9a6f1ae02ce8e6051&oe=5BFA2325", "http://www.smosh.com/wp-content/uploads/2017/04/work-memes-th.jpg", "Being cool is being your own self, not doing something that someone else is telling you to do."));
 
         feedAdapter.notifyDataSetChanged();
 
