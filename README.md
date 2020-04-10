@@ -3,7 +3,7 @@
 The idea behind this application is to create a Social Network and Dating platform.
 
 ## Screenshots
-<img src="https://github.com/thedevelopersanjeev/RightFlick/raw/master/scr1.png" height="1000">
+<img src="https://github.com/AnupKumarPanwar/RightFlick/blob/master/scr1.png?raw=true" height="450">
 
 ## Contributing
 
